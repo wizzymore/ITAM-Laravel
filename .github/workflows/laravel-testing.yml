@@ -12,8 +12,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - name: Copy .env
+        run: php -r "file_exists('.env') || copy('.env.testing', '.env');"
       - name: Install Dependencies
         run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress
+      - name: Generate key
+        run: php artisan key:generate --env=testing
       - name: Directory Permissions
         run: chmod -R 777 storage bootstrap/cache
       - name: Create Database
@@ -22,7 +26,7 @@ jobs:
           touch database/database.sqlite
       - name: Compile assets
         run: |
-          yarn
+          yarn install
           yarn production
       - name: Execute tests (Unit and Feature tests) via PHPUnit
         env:
