@@ -1,13 +1,9 @@
 @extends('layouts.base')
 
-@section('content')
+@section('body')
     @yield('content')
 
     @isset($slot)
         {{ $slot }}
     @endisset
-@endsection
-
-@section('scripts')
-    @yield('scripts')
 @endsection

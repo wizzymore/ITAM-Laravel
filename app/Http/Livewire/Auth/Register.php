@@ -25,7 +25,7 @@ class Register extends Component
     {
         $this->validate([
             'name' => 'required',
-            'email' => 'required|unique:users|email|regex:/^.*@' . env('ITAM_EMAIL_DOMAIN', 'gmail.com') . '$/',
+            'email' => 'required|unique:users|email|regex:/^.*@' . config('custom.domain') . '$/',
             'password' => 'required|min:8|same:passwordConfirmation'
         ]);
 

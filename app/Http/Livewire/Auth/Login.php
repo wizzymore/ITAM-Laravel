@@ -16,7 +16,7 @@ class Login extends Component
     public function login()
     {
         $this->validate([
-            'email' => 'required|email|regex:/^.*@' . env('ITAM_EMAIL_DOMAIN', 'gmail.com') . '$/',
+            'email' => 'required|email|regex:/^.*@' . config('custom.domain') . '$/',
             'password' => 'required|min:8'
         ]);
 

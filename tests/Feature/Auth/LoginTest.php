@@ -35,7 +35,7 @@ class LoginTest extends TestCase
     /** @return void */
     public function test_guest_can_login()
     {
-        $email = 'test@' . env('ITAM_EMAIL_DOMAIN', 'gmail.com');
+        $email = 'test@' . config('custom.domain');
         User::factory()->create([
             'email' => $email,
             'password' => Hash::make('password'),
@@ -98,7 +98,7 @@ class LoginTest extends TestCase
     /** @return void */
     public function test_error_on_invalid_credentials()
     {
-        $email = 'test@' . env('ITAM_EMAIL_DOMAIN', 'gmail.com');
+        $email = 'test@' . config('custom.domain');
 
         User::factory()->create([
             'email' => $email,
