@@ -356,7 +356,7 @@ ul {
  */
 
 html {
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 1 */
+  font-family: Inter var, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 1 */
   line-height: 1.5; /* 2 */
 }
 
@@ -573,6 +573,170 @@ video {
 *, ::before, ::after {
   --tw-border-opacity: 1;
   border-color: rgba(229, 231, 235, var(--tw-border-opacity));
+}
+
+[type='text'],[type='email'],[type='url'],[type='password'],[type='number'],[type='date'],[type='datetime-local'],[type='month'],[type='search'],[type='tel'],[type='time'],[type='week'],[multiple],textarea,select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: #fff;
+  border-color: #6b7280;
+  border-width: 1px;
+  border-radius: 0px;
+  padding-top: 0.5rem;
+  padding-right: 0.75rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+[type='text']:focus, [type='email']:focus, [type='url']:focus, [type='password']:focus, [type='number']:focus, [type='date']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='week']:focus, [multiple]:focus, textarea:focus, select:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  --tw-ring-inset: var(--tw-empty,/*!*/ /*!*/);
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: #2563eb;
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  border-color: #2563eb;
+}
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  color: #6b7280;
+  opacity: 1;
+}
+
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  color: #6b7280;
+  opacity: 1;
+}
+
+input::placeholder,textarea::placeholder {
+  color: #6b7280;
+  opacity: 1;
+}
+
+::-webkit-datetime-edit-fields-wrapper {
+  padding: 0;
+}
+
+::-webkit-date-and-time-value {
+  min-height: 1.5em;
+}
+
+select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+  padding-right: 2.5rem;
+  -webkit-print-color-adjust: exact;
+          color-adjust: exact;
+}
+
+[multiple] {
+  background-image: initial;
+  background-position: initial;
+  background-repeat: unset;
+  background-size: initial;
+  padding-right: 0.75rem;
+  -webkit-print-color-adjust: unset;
+          color-adjust: unset;
+}
+
+[type='checkbox'],[type='radio'] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding: 0;
+  -webkit-print-color-adjust: exact;
+          color-adjust: exact;
+  display: inline-block;
+  vertical-align: middle;
+  background-origin: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  flex-shrink: 0;
+  height: 1rem;
+  width: 1rem;
+  color: #2563eb;
+  background-color: #fff;
+  border-color: #6b7280;
+  border-width: 1px;
+}
+
+[type='checkbox'] {
+  border-radius: 0px;
+}
+
+[type='radio'] {
+  border-radius: 100%;
+}
+
+[type='checkbox']:focus,[type='radio']:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  --tw-ring-inset: var(--tw-empty,/*!*/ /*!*/);
+  --tw-ring-offset-width: 2px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: #2563eb;
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
+[type='checkbox']:checked,[type='radio']:checked {
+  border-color: transparent;
+  background-color: currentColor;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+[type='checkbox']:checked {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+}
+
+[type='radio']:checked {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
+}
+
+[type='checkbox']:checked:hover,[type='checkbox']:checked:focus,[type='radio']:checked:hover,[type='radio']:checked:focus {
+  border-color: transparent;
+  background-color: currentColor;
+}
+
+[type='checkbox']:indeterminate {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 16 16'%3e%3cpath stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8h8'/%3e%3c/svg%3e");
+  border-color: transparent;
+  background-color: currentColor;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+[type='checkbox']:indeterminate:hover,[type='checkbox']:indeterminate:focus {
+  border-color: transparent;
+  background-color: currentColor;
+}
+
+[type='file'] {
+  background: unset;
+  border-color: inherit;
+  border-width: 0;
+  border-radius: 0;
+  padding: 0;
+  font-size: unset;
+  line-height: inherit;
+}
+
+[type='file']:focus {
+  outline: 1px auto -webkit-focus-ring-color;
 }
 
 .container {
@@ -22344,7 +22508,7 @@ video {
 }
 
 .font-sans {
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: Inter var, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .font-serif {
@@ -27993,243 +28157,63 @@ video {
   opacity: 1;
 }
 
-.group:hover .group-hover\:opacity-0 {
+.disabled\:opacity-0:disabled {
   opacity: 0;
 }
 
-.group:hover .group-hover\:opacity-5 {
+.disabled\:opacity-5:disabled {
   opacity: 0.05;
 }
 
-.group:hover .group-hover\:opacity-10 {
+.disabled\:opacity-10:disabled {
   opacity: 0.1;
 }
 
-.group:hover .group-hover\:opacity-20 {
+.disabled\:opacity-20:disabled {
   opacity: 0.2;
 }
 
-.group:hover .group-hover\:opacity-25 {
+.disabled\:opacity-25:disabled {
   opacity: 0.25;
 }
 
-.group:hover .group-hover\:opacity-30 {
+.disabled\:opacity-30:disabled {
   opacity: 0.3;
 }
 
-.group:hover .group-hover\:opacity-40 {
+.disabled\:opacity-40:disabled {
   opacity: 0.4;
 }
 
-.group:hover .group-hover\:opacity-50 {
+.disabled\:opacity-50:disabled {
   opacity: 0.5;
 }
 
-.group:hover .group-hover\:opacity-60 {
+.disabled\:opacity-60:disabled {
   opacity: 0.6;
 }
 
-.group:hover .group-hover\:opacity-70 {
+.disabled\:opacity-70:disabled {
   opacity: 0.7;
 }
 
-.group:hover .group-hover\:opacity-75 {
+.disabled\:opacity-75:disabled {
   opacity: 0.75;
 }
 
-.group:hover .group-hover\:opacity-80 {
+.disabled\:opacity-80:disabled {
   opacity: 0.8;
 }
 
-.group:hover .group-hover\:opacity-90 {
+.disabled\:opacity-90:disabled {
   opacity: 0.9;
 }
 
-.group:hover .group-hover\:opacity-95 {
+.disabled\:opacity-95:disabled {
   opacity: 0.95;
 }
 
-.group:hover .group-hover\:opacity-100 {
-  opacity: 1;
-}
-
-.focus-within\:opacity-0:focus-within {
-  opacity: 0;
-}
-
-.focus-within\:opacity-5:focus-within {
-  opacity: 0.05;
-}
-
-.focus-within\:opacity-10:focus-within {
-  opacity: 0.1;
-}
-
-.focus-within\:opacity-20:focus-within {
-  opacity: 0.2;
-}
-
-.focus-within\:opacity-25:focus-within {
-  opacity: 0.25;
-}
-
-.focus-within\:opacity-30:focus-within {
-  opacity: 0.3;
-}
-
-.focus-within\:opacity-40:focus-within {
-  opacity: 0.4;
-}
-
-.focus-within\:opacity-50:focus-within {
-  opacity: 0.5;
-}
-
-.focus-within\:opacity-60:focus-within {
-  opacity: 0.6;
-}
-
-.focus-within\:opacity-70:focus-within {
-  opacity: 0.7;
-}
-
-.focus-within\:opacity-75:focus-within {
-  opacity: 0.75;
-}
-
-.focus-within\:opacity-80:focus-within {
-  opacity: 0.8;
-}
-
-.focus-within\:opacity-90:focus-within {
-  opacity: 0.9;
-}
-
-.focus-within\:opacity-95:focus-within {
-  opacity: 0.95;
-}
-
-.focus-within\:opacity-100:focus-within {
-  opacity: 1;
-}
-
-.hover\:opacity-0:hover {
-  opacity: 0;
-}
-
-.hover\:opacity-5:hover {
-  opacity: 0.05;
-}
-
-.hover\:opacity-10:hover {
-  opacity: 0.1;
-}
-
-.hover\:opacity-20:hover {
-  opacity: 0.2;
-}
-
-.hover\:opacity-25:hover {
-  opacity: 0.25;
-}
-
-.hover\:opacity-30:hover {
-  opacity: 0.3;
-}
-
-.hover\:opacity-40:hover {
-  opacity: 0.4;
-}
-
-.hover\:opacity-50:hover {
-  opacity: 0.5;
-}
-
-.hover\:opacity-60:hover {
-  opacity: 0.6;
-}
-
-.hover\:opacity-70:hover {
-  opacity: 0.7;
-}
-
-.hover\:opacity-75:hover {
-  opacity: 0.75;
-}
-
-.hover\:opacity-80:hover {
-  opacity: 0.8;
-}
-
-.hover\:opacity-90:hover {
-  opacity: 0.9;
-}
-
-.hover\:opacity-95:hover {
-  opacity: 0.95;
-}
-
-.hover\:opacity-100:hover {
-  opacity: 1;
-}
-
-.focus\:opacity-0:focus {
-  opacity: 0;
-}
-
-.focus\:opacity-5:focus {
-  opacity: 0.05;
-}
-
-.focus\:opacity-10:focus {
-  opacity: 0.1;
-}
-
-.focus\:opacity-20:focus {
-  opacity: 0.2;
-}
-
-.focus\:opacity-25:focus {
-  opacity: 0.25;
-}
-
-.focus\:opacity-30:focus {
-  opacity: 0.3;
-}
-
-.focus\:opacity-40:focus {
-  opacity: 0.4;
-}
-
-.focus\:opacity-50:focus {
-  opacity: 0.5;
-}
-
-.focus\:opacity-60:focus {
-  opacity: 0.6;
-}
-
-.focus\:opacity-70:focus {
-  opacity: 0.7;
-}
-
-.focus\:opacity-75:focus {
-  opacity: 0.75;
-}
-
-.focus\:opacity-80:focus {
-  opacity: 0.8;
-}
-
-.focus\:opacity-90:focus {
-  opacity: 0.9;
-}
-
-.focus\:opacity-95:focus {
-  opacity: 0.95;
-}
-
-.focus\:opacity-100:focus {
+.disabled\:opacity-100:disabled {
   opacity: 1;
 }
 
@@ -53583,7 +53567,7 @@ video {
   }
 
   .sm\:font-sans {
-    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: Inter var, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
   .sm\:font-serif {
@@ -59170,306 +59154,6 @@ video {
 
   .sm\:focus\:placeholder-opacity-100:focus::placeholder {
     --tw-placeholder-opacity: 1;
-  }
-
-  .sm\:opacity-0 {
-    opacity: 0;
-  }
-
-  .sm\:opacity-5 {
-    opacity: 0.05;
-  }
-
-  .sm\:opacity-10 {
-    opacity: 0.1;
-  }
-
-  .sm\:opacity-20 {
-    opacity: 0.2;
-  }
-
-  .sm\:opacity-25 {
-    opacity: 0.25;
-  }
-
-  .sm\:opacity-30 {
-    opacity: 0.3;
-  }
-
-  .sm\:opacity-40 {
-    opacity: 0.4;
-  }
-
-  .sm\:opacity-50 {
-    opacity: 0.5;
-  }
-
-  .sm\:opacity-60 {
-    opacity: 0.6;
-  }
-
-  .sm\:opacity-70 {
-    opacity: 0.7;
-  }
-
-  .sm\:opacity-75 {
-    opacity: 0.75;
-  }
-
-  .sm\:opacity-80 {
-    opacity: 0.8;
-  }
-
-  .sm\:opacity-90 {
-    opacity: 0.9;
-  }
-
-  .sm\:opacity-95 {
-    opacity: 0.95;
-  }
-
-  .sm\:opacity-100 {
-    opacity: 1;
-  }
-
-  .group:hover .sm\:group-hover\:opacity-0 {
-    opacity: 0;
-  }
-
-  .group:hover .sm\:group-hover\:opacity-5 {
-    opacity: 0.05;
-  }
-
-  .group:hover .sm\:group-hover\:opacity-10 {
-    opacity: 0.1;
-  }
-
-  .group:hover .sm\:group-hover\:opacity-20 {
-    opacity: 0.2;
-  }
-
-  .group:hover .sm\:group-hover\:opacity-25 {
-    opacity: 0.25;
-  }
-
-  .group:hover .sm\:group-hover\:opacity-30 {
-    opacity: 0.3;
-  }
-
-  .group:hover .sm\:group-hover\:opacity-40 {
-    opacity: 0.4;
-  }
-
-  .group:hover .sm\:group-hover\:opacity-50 {
-    opacity: 0.5;
-  }
-
-  .group:hover .sm\:group-hover\:opacity-60 {
-    opacity: 0.6;
-  }
-
-  .group:hover .sm\:group-hover\:opacity-70 {
-    opacity: 0.7;
-  }
-
-  .group:hover .sm\:group-hover\:opacity-75 {
-    opacity: 0.75;
-  }
-
-  .group:hover .sm\:group-hover\:opacity-80 {
-    opacity: 0.8;
-  }
-
-  .group:hover .sm\:group-hover\:opacity-90 {
-    opacity: 0.9;
-  }
-
-  .group:hover .sm\:group-hover\:opacity-95 {
-    opacity: 0.95;
-  }
-
-  .group:hover .sm\:group-hover\:opacity-100 {
-    opacity: 1;
-  }
-
-  .sm\:focus-within\:opacity-0:focus-within {
-    opacity: 0;
-  }
-
-  .sm\:focus-within\:opacity-5:focus-within {
-    opacity: 0.05;
-  }
-
-  .sm\:focus-within\:opacity-10:focus-within {
-    opacity: 0.1;
-  }
-
-  .sm\:focus-within\:opacity-20:focus-within {
-    opacity: 0.2;
-  }
-
-  .sm\:focus-within\:opacity-25:focus-within {
-    opacity: 0.25;
-  }
-
-  .sm\:focus-within\:opacity-30:focus-within {
-    opacity: 0.3;
-  }
-
-  .sm\:focus-within\:opacity-40:focus-within {
-    opacity: 0.4;
-  }
-
-  .sm\:focus-within\:opacity-50:focus-within {
-    opacity: 0.5;
-  }
-
-  .sm\:focus-within\:opacity-60:focus-within {
-    opacity: 0.6;
-  }
-
-  .sm\:focus-within\:opacity-70:focus-within {
-    opacity: 0.7;
-  }
-
-  .sm\:focus-within\:opacity-75:focus-within {
-    opacity: 0.75;
-  }
-
-  .sm\:focus-within\:opacity-80:focus-within {
-    opacity: 0.8;
-  }
-
-  .sm\:focus-within\:opacity-90:focus-within {
-    opacity: 0.9;
-  }
-
-  .sm\:focus-within\:opacity-95:focus-within {
-    opacity: 0.95;
-  }
-
-  .sm\:focus-within\:opacity-100:focus-within {
-    opacity: 1;
-  }
-
-  .sm\:hover\:opacity-0:hover {
-    opacity: 0;
-  }
-
-  .sm\:hover\:opacity-5:hover {
-    opacity: 0.05;
-  }
-
-  .sm\:hover\:opacity-10:hover {
-    opacity: 0.1;
-  }
-
-  .sm\:hover\:opacity-20:hover {
-    opacity: 0.2;
-  }
-
-  .sm\:hover\:opacity-25:hover {
-    opacity: 0.25;
-  }
-
-  .sm\:hover\:opacity-30:hover {
-    opacity: 0.3;
-  }
-
-  .sm\:hover\:opacity-40:hover {
-    opacity: 0.4;
-  }
-
-  .sm\:hover\:opacity-50:hover {
-    opacity: 0.5;
-  }
-
-  .sm\:hover\:opacity-60:hover {
-    opacity: 0.6;
-  }
-
-  .sm\:hover\:opacity-70:hover {
-    opacity: 0.7;
-  }
-
-  .sm\:hover\:opacity-75:hover {
-    opacity: 0.75;
-  }
-
-  .sm\:hover\:opacity-80:hover {
-    opacity: 0.8;
-  }
-
-  .sm\:hover\:opacity-90:hover {
-    opacity: 0.9;
-  }
-
-  .sm\:hover\:opacity-95:hover {
-    opacity: 0.95;
-  }
-
-  .sm\:hover\:opacity-100:hover {
-    opacity: 1;
-  }
-
-  .sm\:focus\:opacity-0:focus {
-    opacity: 0;
-  }
-
-  .sm\:focus\:opacity-5:focus {
-    opacity: 0.05;
-  }
-
-  .sm\:focus\:opacity-10:focus {
-    opacity: 0.1;
-  }
-
-  .sm\:focus\:opacity-20:focus {
-    opacity: 0.2;
-  }
-
-  .sm\:focus\:opacity-25:focus {
-    opacity: 0.25;
-  }
-
-  .sm\:focus\:opacity-30:focus {
-    opacity: 0.3;
-  }
-
-  .sm\:focus\:opacity-40:focus {
-    opacity: 0.4;
-  }
-
-  .sm\:focus\:opacity-50:focus {
-    opacity: 0.5;
-  }
-
-  .sm\:focus\:opacity-60:focus {
-    opacity: 0.6;
-  }
-
-  .sm\:focus\:opacity-70:focus {
-    opacity: 0.7;
-  }
-
-  .sm\:focus\:opacity-75:focus {
-    opacity: 0.75;
-  }
-
-  .sm\:focus\:opacity-80:focus {
-    opacity: 0.8;
-  }
-
-  .sm\:focus\:opacity-90:focus {
-    opacity: 0.9;
-  }
-
-  .sm\:focus\:opacity-95:focus {
-    opacity: 0.95;
-  }
-
-  .sm\:focus\:opacity-100:focus {
-    opacity: 1;
   }
 
   .sm\:bg-blend-normal {
@@ -84810,7 +84494,7 @@ video {
   }
 
   .md\:font-sans {
-    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: Inter var, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
   .md\:font-serif {
@@ -90397,306 +90081,6 @@ video {
 
   .md\:focus\:placeholder-opacity-100:focus::placeholder {
     --tw-placeholder-opacity: 1;
-  }
-
-  .md\:opacity-0 {
-    opacity: 0;
-  }
-
-  .md\:opacity-5 {
-    opacity: 0.05;
-  }
-
-  .md\:opacity-10 {
-    opacity: 0.1;
-  }
-
-  .md\:opacity-20 {
-    opacity: 0.2;
-  }
-
-  .md\:opacity-25 {
-    opacity: 0.25;
-  }
-
-  .md\:opacity-30 {
-    opacity: 0.3;
-  }
-
-  .md\:opacity-40 {
-    opacity: 0.4;
-  }
-
-  .md\:opacity-50 {
-    opacity: 0.5;
-  }
-
-  .md\:opacity-60 {
-    opacity: 0.6;
-  }
-
-  .md\:opacity-70 {
-    opacity: 0.7;
-  }
-
-  .md\:opacity-75 {
-    opacity: 0.75;
-  }
-
-  .md\:opacity-80 {
-    opacity: 0.8;
-  }
-
-  .md\:opacity-90 {
-    opacity: 0.9;
-  }
-
-  .md\:opacity-95 {
-    opacity: 0.95;
-  }
-
-  .md\:opacity-100 {
-    opacity: 1;
-  }
-
-  .group:hover .md\:group-hover\:opacity-0 {
-    opacity: 0;
-  }
-
-  .group:hover .md\:group-hover\:opacity-5 {
-    opacity: 0.05;
-  }
-
-  .group:hover .md\:group-hover\:opacity-10 {
-    opacity: 0.1;
-  }
-
-  .group:hover .md\:group-hover\:opacity-20 {
-    opacity: 0.2;
-  }
-
-  .group:hover .md\:group-hover\:opacity-25 {
-    opacity: 0.25;
-  }
-
-  .group:hover .md\:group-hover\:opacity-30 {
-    opacity: 0.3;
-  }
-
-  .group:hover .md\:group-hover\:opacity-40 {
-    opacity: 0.4;
-  }
-
-  .group:hover .md\:group-hover\:opacity-50 {
-    opacity: 0.5;
-  }
-
-  .group:hover .md\:group-hover\:opacity-60 {
-    opacity: 0.6;
-  }
-
-  .group:hover .md\:group-hover\:opacity-70 {
-    opacity: 0.7;
-  }
-
-  .group:hover .md\:group-hover\:opacity-75 {
-    opacity: 0.75;
-  }
-
-  .group:hover .md\:group-hover\:opacity-80 {
-    opacity: 0.8;
-  }
-
-  .group:hover .md\:group-hover\:opacity-90 {
-    opacity: 0.9;
-  }
-
-  .group:hover .md\:group-hover\:opacity-95 {
-    opacity: 0.95;
-  }
-
-  .group:hover .md\:group-hover\:opacity-100 {
-    opacity: 1;
-  }
-
-  .md\:focus-within\:opacity-0:focus-within {
-    opacity: 0;
-  }
-
-  .md\:focus-within\:opacity-5:focus-within {
-    opacity: 0.05;
-  }
-
-  .md\:focus-within\:opacity-10:focus-within {
-    opacity: 0.1;
-  }
-
-  .md\:focus-within\:opacity-20:focus-within {
-    opacity: 0.2;
-  }
-
-  .md\:focus-within\:opacity-25:focus-within {
-    opacity: 0.25;
-  }
-
-  .md\:focus-within\:opacity-30:focus-within {
-    opacity: 0.3;
-  }
-
-  .md\:focus-within\:opacity-40:focus-within {
-    opacity: 0.4;
-  }
-
-  .md\:focus-within\:opacity-50:focus-within {
-    opacity: 0.5;
-  }
-
-  .md\:focus-within\:opacity-60:focus-within {
-    opacity: 0.6;
-  }
-
-  .md\:focus-within\:opacity-70:focus-within {
-    opacity: 0.7;
-  }
-
-  .md\:focus-within\:opacity-75:focus-within {
-    opacity: 0.75;
-  }
-
-  .md\:focus-within\:opacity-80:focus-within {
-    opacity: 0.8;
-  }
-
-  .md\:focus-within\:opacity-90:focus-within {
-    opacity: 0.9;
-  }
-
-  .md\:focus-within\:opacity-95:focus-within {
-    opacity: 0.95;
-  }
-
-  .md\:focus-within\:opacity-100:focus-within {
-    opacity: 1;
-  }
-
-  .md\:hover\:opacity-0:hover {
-    opacity: 0;
-  }
-
-  .md\:hover\:opacity-5:hover {
-    opacity: 0.05;
-  }
-
-  .md\:hover\:opacity-10:hover {
-    opacity: 0.1;
-  }
-
-  .md\:hover\:opacity-20:hover {
-    opacity: 0.2;
-  }
-
-  .md\:hover\:opacity-25:hover {
-    opacity: 0.25;
-  }
-
-  .md\:hover\:opacity-30:hover {
-    opacity: 0.3;
-  }
-
-  .md\:hover\:opacity-40:hover {
-    opacity: 0.4;
-  }
-
-  .md\:hover\:opacity-50:hover {
-    opacity: 0.5;
-  }
-
-  .md\:hover\:opacity-60:hover {
-    opacity: 0.6;
-  }
-
-  .md\:hover\:opacity-70:hover {
-    opacity: 0.7;
-  }
-
-  .md\:hover\:opacity-75:hover {
-    opacity: 0.75;
-  }
-
-  .md\:hover\:opacity-80:hover {
-    opacity: 0.8;
-  }
-
-  .md\:hover\:opacity-90:hover {
-    opacity: 0.9;
-  }
-
-  .md\:hover\:opacity-95:hover {
-    opacity: 0.95;
-  }
-
-  .md\:hover\:opacity-100:hover {
-    opacity: 1;
-  }
-
-  .md\:focus\:opacity-0:focus {
-    opacity: 0;
-  }
-
-  .md\:focus\:opacity-5:focus {
-    opacity: 0.05;
-  }
-
-  .md\:focus\:opacity-10:focus {
-    opacity: 0.1;
-  }
-
-  .md\:focus\:opacity-20:focus {
-    opacity: 0.2;
-  }
-
-  .md\:focus\:opacity-25:focus {
-    opacity: 0.25;
-  }
-
-  .md\:focus\:opacity-30:focus {
-    opacity: 0.3;
-  }
-
-  .md\:focus\:opacity-40:focus {
-    opacity: 0.4;
-  }
-
-  .md\:focus\:opacity-50:focus {
-    opacity: 0.5;
-  }
-
-  .md\:focus\:opacity-60:focus {
-    opacity: 0.6;
-  }
-
-  .md\:focus\:opacity-70:focus {
-    opacity: 0.7;
-  }
-
-  .md\:focus\:opacity-75:focus {
-    opacity: 0.75;
-  }
-
-  .md\:focus\:opacity-80:focus {
-    opacity: 0.8;
-  }
-
-  .md\:focus\:opacity-90:focus {
-    opacity: 0.9;
-  }
-
-  .md\:focus\:opacity-95:focus {
-    opacity: 0.95;
-  }
-
-  .md\:focus\:opacity-100:focus {
-    opacity: 1;
   }
 
   .md\:bg-blend-normal {
@@ -116037,7 +115421,7 @@ video {
   }
 
   .lg\:font-sans {
-    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: Inter var, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
   .lg\:font-serif {
@@ -121624,306 +121008,6 @@ video {
 
   .lg\:focus\:placeholder-opacity-100:focus::placeholder {
     --tw-placeholder-opacity: 1;
-  }
-
-  .lg\:opacity-0 {
-    opacity: 0;
-  }
-
-  .lg\:opacity-5 {
-    opacity: 0.05;
-  }
-
-  .lg\:opacity-10 {
-    opacity: 0.1;
-  }
-
-  .lg\:opacity-20 {
-    opacity: 0.2;
-  }
-
-  .lg\:opacity-25 {
-    opacity: 0.25;
-  }
-
-  .lg\:opacity-30 {
-    opacity: 0.3;
-  }
-
-  .lg\:opacity-40 {
-    opacity: 0.4;
-  }
-
-  .lg\:opacity-50 {
-    opacity: 0.5;
-  }
-
-  .lg\:opacity-60 {
-    opacity: 0.6;
-  }
-
-  .lg\:opacity-70 {
-    opacity: 0.7;
-  }
-
-  .lg\:opacity-75 {
-    opacity: 0.75;
-  }
-
-  .lg\:opacity-80 {
-    opacity: 0.8;
-  }
-
-  .lg\:opacity-90 {
-    opacity: 0.9;
-  }
-
-  .lg\:opacity-95 {
-    opacity: 0.95;
-  }
-
-  .lg\:opacity-100 {
-    opacity: 1;
-  }
-
-  .group:hover .lg\:group-hover\:opacity-0 {
-    opacity: 0;
-  }
-
-  .group:hover .lg\:group-hover\:opacity-5 {
-    opacity: 0.05;
-  }
-
-  .group:hover .lg\:group-hover\:opacity-10 {
-    opacity: 0.1;
-  }
-
-  .group:hover .lg\:group-hover\:opacity-20 {
-    opacity: 0.2;
-  }
-
-  .group:hover .lg\:group-hover\:opacity-25 {
-    opacity: 0.25;
-  }
-
-  .group:hover .lg\:group-hover\:opacity-30 {
-    opacity: 0.3;
-  }
-
-  .group:hover .lg\:group-hover\:opacity-40 {
-    opacity: 0.4;
-  }
-
-  .group:hover .lg\:group-hover\:opacity-50 {
-    opacity: 0.5;
-  }
-
-  .group:hover .lg\:group-hover\:opacity-60 {
-    opacity: 0.6;
-  }
-
-  .group:hover .lg\:group-hover\:opacity-70 {
-    opacity: 0.7;
-  }
-
-  .group:hover .lg\:group-hover\:opacity-75 {
-    opacity: 0.75;
-  }
-
-  .group:hover .lg\:group-hover\:opacity-80 {
-    opacity: 0.8;
-  }
-
-  .group:hover .lg\:group-hover\:opacity-90 {
-    opacity: 0.9;
-  }
-
-  .group:hover .lg\:group-hover\:opacity-95 {
-    opacity: 0.95;
-  }
-
-  .group:hover .lg\:group-hover\:opacity-100 {
-    opacity: 1;
-  }
-
-  .lg\:focus-within\:opacity-0:focus-within {
-    opacity: 0;
-  }
-
-  .lg\:focus-within\:opacity-5:focus-within {
-    opacity: 0.05;
-  }
-
-  .lg\:focus-within\:opacity-10:focus-within {
-    opacity: 0.1;
-  }
-
-  .lg\:focus-within\:opacity-20:focus-within {
-    opacity: 0.2;
-  }
-
-  .lg\:focus-within\:opacity-25:focus-within {
-    opacity: 0.25;
-  }
-
-  .lg\:focus-within\:opacity-30:focus-within {
-    opacity: 0.3;
-  }
-
-  .lg\:focus-within\:opacity-40:focus-within {
-    opacity: 0.4;
-  }
-
-  .lg\:focus-within\:opacity-50:focus-within {
-    opacity: 0.5;
-  }
-
-  .lg\:focus-within\:opacity-60:focus-within {
-    opacity: 0.6;
-  }
-
-  .lg\:focus-within\:opacity-70:focus-within {
-    opacity: 0.7;
-  }
-
-  .lg\:focus-within\:opacity-75:focus-within {
-    opacity: 0.75;
-  }
-
-  .lg\:focus-within\:opacity-80:focus-within {
-    opacity: 0.8;
-  }
-
-  .lg\:focus-within\:opacity-90:focus-within {
-    opacity: 0.9;
-  }
-
-  .lg\:focus-within\:opacity-95:focus-within {
-    opacity: 0.95;
-  }
-
-  .lg\:focus-within\:opacity-100:focus-within {
-    opacity: 1;
-  }
-
-  .lg\:hover\:opacity-0:hover {
-    opacity: 0;
-  }
-
-  .lg\:hover\:opacity-5:hover {
-    opacity: 0.05;
-  }
-
-  .lg\:hover\:opacity-10:hover {
-    opacity: 0.1;
-  }
-
-  .lg\:hover\:opacity-20:hover {
-    opacity: 0.2;
-  }
-
-  .lg\:hover\:opacity-25:hover {
-    opacity: 0.25;
-  }
-
-  .lg\:hover\:opacity-30:hover {
-    opacity: 0.3;
-  }
-
-  .lg\:hover\:opacity-40:hover {
-    opacity: 0.4;
-  }
-
-  .lg\:hover\:opacity-50:hover {
-    opacity: 0.5;
-  }
-
-  .lg\:hover\:opacity-60:hover {
-    opacity: 0.6;
-  }
-
-  .lg\:hover\:opacity-70:hover {
-    opacity: 0.7;
-  }
-
-  .lg\:hover\:opacity-75:hover {
-    opacity: 0.75;
-  }
-
-  .lg\:hover\:opacity-80:hover {
-    opacity: 0.8;
-  }
-
-  .lg\:hover\:opacity-90:hover {
-    opacity: 0.9;
-  }
-
-  .lg\:hover\:opacity-95:hover {
-    opacity: 0.95;
-  }
-
-  .lg\:hover\:opacity-100:hover {
-    opacity: 1;
-  }
-
-  .lg\:focus\:opacity-0:focus {
-    opacity: 0;
-  }
-
-  .lg\:focus\:opacity-5:focus {
-    opacity: 0.05;
-  }
-
-  .lg\:focus\:opacity-10:focus {
-    opacity: 0.1;
-  }
-
-  .lg\:focus\:opacity-20:focus {
-    opacity: 0.2;
-  }
-
-  .lg\:focus\:opacity-25:focus {
-    opacity: 0.25;
-  }
-
-  .lg\:focus\:opacity-30:focus {
-    opacity: 0.3;
-  }
-
-  .lg\:focus\:opacity-40:focus {
-    opacity: 0.4;
-  }
-
-  .lg\:focus\:opacity-50:focus {
-    opacity: 0.5;
-  }
-
-  .lg\:focus\:opacity-60:focus {
-    opacity: 0.6;
-  }
-
-  .lg\:focus\:opacity-70:focus {
-    opacity: 0.7;
-  }
-
-  .lg\:focus\:opacity-75:focus {
-    opacity: 0.75;
-  }
-
-  .lg\:focus\:opacity-80:focus {
-    opacity: 0.8;
-  }
-
-  .lg\:focus\:opacity-90:focus {
-    opacity: 0.9;
-  }
-
-  .lg\:focus\:opacity-95:focus {
-    opacity: 0.95;
-  }
-
-  .lg\:focus\:opacity-100:focus {
-    opacity: 1;
   }
 
   .lg\:bg-blend-normal {
@@ -147264,7 +146348,7 @@ video {
   }
 
   .xl\:font-sans {
-    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: Inter var, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
   .xl\:font-serif {
@@ -152851,306 +151935,6 @@ video {
 
   .xl\:focus\:placeholder-opacity-100:focus::placeholder {
     --tw-placeholder-opacity: 1;
-  }
-
-  .xl\:opacity-0 {
-    opacity: 0;
-  }
-
-  .xl\:opacity-5 {
-    opacity: 0.05;
-  }
-
-  .xl\:opacity-10 {
-    opacity: 0.1;
-  }
-
-  .xl\:opacity-20 {
-    opacity: 0.2;
-  }
-
-  .xl\:opacity-25 {
-    opacity: 0.25;
-  }
-
-  .xl\:opacity-30 {
-    opacity: 0.3;
-  }
-
-  .xl\:opacity-40 {
-    opacity: 0.4;
-  }
-
-  .xl\:opacity-50 {
-    opacity: 0.5;
-  }
-
-  .xl\:opacity-60 {
-    opacity: 0.6;
-  }
-
-  .xl\:opacity-70 {
-    opacity: 0.7;
-  }
-
-  .xl\:opacity-75 {
-    opacity: 0.75;
-  }
-
-  .xl\:opacity-80 {
-    opacity: 0.8;
-  }
-
-  .xl\:opacity-90 {
-    opacity: 0.9;
-  }
-
-  .xl\:opacity-95 {
-    opacity: 0.95;
-  }
-
-  .xl\:opacity-100 {
-    opacity: 1;
-  }
-
-  .group:hover .xl\:group-hover\:opacity-0 {
-    opacity: 0;
-  }
-
-  .group:hover .xl\:group-hover\:opacity-5 {
-    opacity: 0.05;
-  }
-
-  .group:hover .xl\:group-hover\:opacity-10 {
-    opacity: 0.1;
-  }
-
-  .group:hover .xl\:group-hover\:opacity-20 {
-    opacity: 0.2;
-  }
-
-  .group:hover .xl\:group-hover\:opacity-25 {
-    opacity: 0.25;
-  }
-
-  .group:hover .xl\:group-hover\:opacity-30 {
-    opacity: 0.3;
-  }
-
-  .group:hover .xl\:group-hover\:opacity-40 {
-    opacity: 0.4;
-  }
-
-  .group:hover .xl\:group-hover\:opacity-50 {
-    opacity: 0.5;
-  }
-
-  .group:hover .xl\:group-hover\:opacity-60 {
-    opacity: 0.6;
-  }
-
-  .group:hover .xl\:group-hover\:opacity-70 {
-    opacity: 0.7;
-  }
-
-  .group:hover .xl\:group-hover\:opacity-75 {
-    opacity: 0.75;
-  }
-
-  .group:hover .xl\:group-hover\:opacity-80 {
-    opacity: 0.8;
-  }
-
-  .group:hover .xl\:group-hover\:opacity-90 {
-    opacity: 0.9;
-  }
-
-  .group:hover .xl\:group-hover\:opacity-95 {
-    opacity: 0.95;
-  }
-
-  .group:hover .xl\:group-hover\:opacity-100 {
-    opacity: 1;
-  }
-
-  .xl\:focus-within\:opacity-0:focus-within {
-    opacity: 0;
-  }
-
-  .xl\:focus-within\:opacity-5:focus-within {
-    opacity: 0.05;
-  }
-
-  .xl\:focus-within\:opacity-10:focus-within {
-    opacity: 0.1;
-  }
-
-  .xl\:focus-within\:opacity-20:focus-within {
-    opacity: 0.2;
-  }
-
-  .xl\:focus-within\:opacity-25:focus-within {
-    opacity: 0.25;
-  }
-
-  .xl\:focus-within\:opacity-30:focus-within {
-    opacity: 0.3;
-  }
-
-  .xl\:focus-within\:opacity-40:focus-within {
-    opacity: 0.4;
-  }
-
-  .xl\:focus-within\:opacity-50:focus-within {
-    opacity: 0.5;
-  }
-
-  .xl\:focus-within\:opacity-60:focus-within {
-    opacity: 0.6;
-  }
-
-  .xl\:focus-within\:opacity-70:focus-within {
-    opacity: 0.7;
-  }
-
-  .xl\:focus-within\:opacity-75:focus-within {
-    opacity: 0.75;
-  }
-
-  .xl\:focus-within\:opacity-80:focus-within {
-    opacity: 0.8;
-  }
-
-  .xl\:focus-within\:opacity-90:focus-within {
-    opacity: 0.9;
-  }
-
-  .xl\:focus-within\:opacity-95:focus-within {
-    opacity: 0.95;
-  }
-
-  .xl\:focus-within\:opacity-100:focus-within {
-    opacity: 1;
-  }
-
-  .xl\:hover\:opacity-0:hover {
-    opacity: 0;
-  }
-
-  .xl\:hover\:opacity-5:hover {
-    opacity: 0.05;
-  }
-
-  .xl\:hover\:opacity-10:hover {
-    opacity: 0.1;
-  }
-
-  .xl\:hover\:opacity-20:hover {
-    opacity: 0.2;
-  }
-
-  .xl\:hover\:opacity-25:hover {
-    opacity: 0.25;
-  }
-
-  .xl\:hover\:opacity-30:hover {
-    opacity: 0.3;
-  }
-
-  .xl\:hover\:opacity-40:hover {
-    opacity: 0.4;
-  }
-
-  .xl\:hover\:opacity-50:hover {
-    opacity: 0.5;
-  }
-
-  .xl\:hover\:opacity-60:hover {
-    opacity: 0.6;
-  }
-
-  .xl\:hover\:opacity-70:hover {
-    opacity: 0.7;
-  }
-
-  .xl\:hover\:opacity-75:hover {
-    opacity: 0.75;
-  }
-
-  .xl\:hover\:opacity-80:hover {
-    opacity: 0.8;
-  }
-
-  .xl\:hover\:opacity-90:hover {
-    opacity: 0.9;
-  }
-
-  .xl\:hover\:opacity-95:hover {
-    opacity: 0.95;
-  }
-
-  .xl\:hover\:opacity-100:hover {
-    opacity: 1;
-  }
-
-  .xl\:focus\:opacity-0:focus {
-    opacity: 0;
-  }
-
-  .xl\:focus\:opacity-5:focus {
-    opacity: 0.05;
-  }
-
-  .xl\:focus\:opacity-10:focus {
-    opacity: 0.1;
-  }
-
-  .xl\:focus\:opacity-20:focus {
-    opacity: 0.2;
-  }
-
-  .xl\:focus\:opacity-25:focus {
-    opacity: 0.25;
-  }
-
-  .xl\:focus\:opacity-30:focus {
-    opacity: 0.3;
-  }
-
-  .xl\:focus\:opacity-40:focus {
-    opacity: 0.4;
-  }
-
-  .xl\:focus\:opacity-50:focus {
-    opacity: 0.5;
-  }
-
-  .xl\:focus\:opacity-60:focus {
-    opacity: 0.6;
-  }
-
-  .xl\:focus\:opacity-70:focus {
-    opacity: 0.7;
-  }
-
-  .xl\:focus\:opacity-75:focus {
-    opacity: 0.75;
-  }
-
-  .xl\:focus\:opacity-80:focus {
-    opacity: 0.8;
-  }
-
-  .xl\:focus\:opacity-90:focus {
-    opacity: 0.9;
-  }
-
-  .xl\:focus\:opacity-95:focus {
-    opacity: 0.95;
-  }
-
-  .xl\:focus\:opacity-100:focus {
-    opacity: 1;
   }
 
   .xl\:bg-blend-normal {
@@ -178491,7 +177275,7 @@ video {
   }
 
   .\32xl\:font-sans {
-    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: Inter var, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
   .\32xl\:font-serif {
@@ -184078,306 +182862,6 @@ video {
 
   .\32xl\:focus\:placeholder-opacity-100:focus::placeholder {
     --tw-placeholder-opacity: 1;
-  }
-
-  .\32xl\:opacity-0 {
-    opacity: 0;
-  }
-
-  .\32xl\:opacity-5 {
-    opacity: 0.05;
-  }
-
-  .\32xl\:opacity-10 {
-    opacity: 0.1;
-  }
-
-  .\32xl\:opacity-20 {
-    opacity: 0.2;
-  }
-
-  .\32xl\:opacity-25 {
-    opacity: 0.25;
-  }
-
-  .\32xl\:opacity-30 {
-    opacity: 0.3;
-  }
-
-  .\32xl\:opacity-40 {
-    opacity: 0.4;
-  }
-
-  .\32xl\:opacity-50 {
-    opacity: 0.5;
-  }
-
-  .\32xl\:opacity-60 {
-    opacity: 0.6;
-  }
-
-  .\32xl\:opacity-70 {
-    opacity: 0.7;
-  }
-
-  .\32xl\:opacity-75 {
-    opacity: 0.75;
-  }
-
-  .\32xl\:opacity-80 {
-    opacity: 0.8;
-  }
-
-  .\32xl\:opacity-90 {
-    opacity: 0.9;
-  }
-
-  .\32xl\:opacity-95 {
-    opacity: 0.95;
-  }
-
-  .\32xl\:opacity-100 {
-    opacity: 1;
-  }
-
-  .group:hover .\32xl\:group-hover\:opacity-0 {
-    opacity: 0;
-  }
-
-  .group:hover .\32xl\:group-hover\:opacity-5 {
-    opacity: 0.05;
-  }
-
-  .group:hover .\32xl\:group-hover\:opacity-10 {
-    opacity: 0.1;
-  }
-
-  .group:hover .\32xl\:group-hover\:opacity-20 {
-    opacity: 0.2;
-  }
-
-  .group:hover .\32xl\:group-hover\:opacity-25 {
-    opacity: 0.25;
-  }
-
-  .group:hover .\32xl\:group-hover\:opacity-30 {
-    opacity: 0.3;
-  }
-
-  .group:hover .\32xl\:group-hover\:opacity-40 {
-    opacity: 0.4;
-  }
-
-  .group:hover .\32xl\:group-hover\:opacity-50 {
-    opacity: 0.5;
-  }
-
-  .group:hover .\32xl\:group-hover\:opacity-60 {
-    opacity: 0.6;
-  }
-
-  .group:hover .\32xl\:group-hover\:opacity-70 {
-    opacity: 0.7;
-  }
-
-  .group:hover .\32xl\:group-hover\:opacity-75 {
-    opacity: 0.75;
-  }
-
-  .group:hover .\32xl\:group-hover\:opacity-80 {
-    opacity: 0.8;
-  }
-
-  .group:hover .\32xl\:group-hover\:opacity-90 {
-    opacity: 0.9;
-  }
-
-  .group:hover .\32xl\:group-hover\:opacity-95 {
-    opacity: 0.95;
-  }
-
-  .group:hover .\32xl\:group-hover\:opacity-100 {
-    opacity: 1;
-  }
-
-  .\32xl\:focus-within\:opacity-0:focus-within {
-    opacity: 0;
-  }
-
-  .\32xl\:focus-within\:opacity-5:focus-within {
-    opacity: 0.05;
-  }
-
-  .\32xl\:focus-within\:opacity-10:focus-within {
-    opacity: 0.1;
-  }
-
-  .\32xl\:focus-within\:opacity-20:focus-within {
-    opacity: 0.2;
-  }
-
-  .\32xl\:focus-within\:opacity-25:focus-within {
-    opacity: 0.25;
-  }
-
-  .\32xl\:focus-within\:opacity-30:focus-within {
-    opacity: 0.3;
-  }
-
-  .\32xl\:focus-within\:opacity-40:focus-within {
-    opacity: 0.4;
-  }
-
-  .\32xl\:focus-within\:opacity-50:focus-within {
-    opacity: 0.5;
-  }
-
-  .\32xl\:focus-within\:opacity-60:focus-within {
-    opacity: 0.6;
-  }
-
-  .\32xl\:focus-within\:opacity-70:focus-within {
-    opacity: 0.7;
-  }
-
-  .\32xl\:focus-within\:opacity-75:focus-within {
-    opacity: 0.75;
-  }
-
-  .\32xl\:focus-within\:opacity-80:focus-within {
-    opacity: 0.8;
-  }
-
-  .\32xl\:focus-within\:opacity-90:focus-within {
-    opacity: 0.9;
-  }
-
-  .\32xl\:focus-within\:opacity-95:focus-within {
-    opacity: 0.95;
-  }
-
-  .\32xl\:focus-within\:opacity-100:focus-within {
-    opacity: 1;
-  }
-
-  .\32xl\:hover\:opacity-0:hover {
-    opacity: 0;
-  }
-
-  .\32xl\:hover\:opacity-5:hover {
-    opacity: 0.05;
-  }
-
-  .\32xl\:hover\:opacity-10:hover {
-    opacity: 0.1;
-  }
-
-  .\32xl\:hover\:opacity-20:hover {
-    opacity: 0.2;
-  }
-
-  .\32xl\:hover\:opacity-25:hover {
-    opacity: 0.25;
-  }
-
-  .\32xl\:hover\:opacity-30:hover {
-    opacity: 0.3;
-  }
-
-  .\32xl\:hover\:opacity-40:hover {
-    opacity: 0.4;
-  }
-
-  .\32xl\:hover\:opacity-50:hover {
-    opacity: 0.5;
-  }
-
-  .\32xl\:hover\:opacity-60:hover {
-    opacity: 0.6;
-  }
-
-  .\32xl\:hover\:opacity-70:hover {
-    opacity: 0.7;
-  }
-
-  .\32xl\:hover\:opacity-75:hover {
-    opacity: 0.75;
-  }
-
-  .\32xl\:hover\:opacity-80:hover {
-    opacity: 0.8;
-  }
-
-  .\32xl\:hover\:opacity-90:hover {
-    opacity: 0.9;
-  }
-
-  .\32xl\:hover\:opacity-95:hover {
-    opacity: 0.95;
-  }
-
-  .\32xl\:hover\:opacity-100:hover {
-    opacity: 1;
-  }
-
-  .\32xl\:focus\:opacity-0:focus {
-    opacity: 0;
-  }
-
-  .\32xl\:focus\:opacity-5:focus {
-    opacity: 0.05;
-  }
-
-  .\32xl\:focus\:opacity-10:focus {
-    opacity: 0.1;
-  }
-
-  .\32xl\:focus\:opacity-20:focus {
-    opacity: 0.2;
-  }
-
-  .\32xl\:focus\:opacity-25:focus {
-    opacity: 0.25;
-  }
-
-  .\32xl\:focus\:opacity-30:focus {
-    opacity: 0.3;
-  }
-
-  .\32xl\:focus\:opacity-40:focus {
-    opacity: 0.4;
-  }
-
-  .\32xl\:focus\:opacity-50:focus {
-    opacity: 0.5;
-  }
-
-  .\32xl\:focus\:opacity-60:focus {
-    opacity: 0.6;
-  }
-
-  .\32xl\:focus\:opacity-70:focus {
-    opacity: 0.7;
-  }
-
-  .\32xl\:focus\:opacity-75:focus {
-    opacity: 0.75;
-  }
-
-  .\32xl\:focus\:opacity-80:focus {
-    opacity: 0.8;
-  }
-
-  .\32xl\:focus\:opacity-90:focus {
-    opacity: 0.9;
-  }
-
-  .\32xl\:focus\:opacity-95:focus {
-    opacity: 0.95;
-  }
-
-  .\32xl\:focus\:opacity-100:focus {
-    opacity: 1;
   }
 
   .\32xl\:bg-blend-normal {
