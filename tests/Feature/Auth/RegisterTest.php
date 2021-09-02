@@ -49,7 +49,7 @@ class RegisterTest extends TestCase
     {
         Event::fake();
 
-        $email = 'bilucristian25@ipsos.com';
+        $email = 'bilucristian25@' . config('custom.domain');
 
         Livewire::test('auth.register')
             ->set('name', 'Cristian Bilu')
