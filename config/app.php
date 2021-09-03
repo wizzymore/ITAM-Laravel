@@ -231,4 +231,8 @@ return [
 
     ],
 
+    'force' => [
+        'https' => env('APP_FORCE_HTTPS', false)
+    ]
+
 ];
