@@ -2,6 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Domain\Assets\Models\Asset;
+use App\Domain\Assets\Models\ProductMaker;
+use App\Domain\Assets\Models\ProductType;
+use App\Domain\Users\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,6 +17,31 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        if (!User::where('email', 'admin@itam.test')->find(1)) {
+            User::factory()->create([
+                'email' => 'admin@itam.test'
+            ]);
+        }
+
+        if (ProductType::count() === 0) {
+            ProductType::factory()->createMany([
+                [
+                    'name' => 'Laptop'
+                ],
+                [
+                    'name' => 'Desktop'
+                ]
+            ]);
+        }
+
+        if (ProductMaker::count() === 0) {
+            ProductMaker::factory()->create(
+                [
+                    'name' => 'Dell'
+                ]
+            );
+        }
+
+        Asset::factory(10)->create();
     }
 }

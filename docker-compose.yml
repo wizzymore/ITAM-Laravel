@@ -1,0 +1,30 @@
+version: "3"
+services:
+    #Meili Search service
+    meilisearch:
+        image: "getmeili/meilisearch:latest"
+        restart: unless-stopped
+        ports:
+            - "7700:7700"
+        volumes:
+            - "itammeilisearch:/data.ms"
+        networks:
+            - itam
+
+    mailhog:
+        image: "mailhog/mailhog:latest"
+        restart: unless-stopped
+        ports:
+            - "1025:1025"
+            - "8025:8025"
+        networks:
+            - itam
+
+#Docker Networks
+networks:
+    itam:
+        driver: bridge
+
+volumes:
+    itammeilisearch:
+        driver: local

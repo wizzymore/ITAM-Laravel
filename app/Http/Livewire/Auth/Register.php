@@ -2,7 +2,8 @@
 
 namespace App\Http\Livewire\Auth;
 
-use App\Models\User;
+use App\Domain\Users\Models\User;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
@@ -39,11 +40,11 @@ class Register extends Component
 
         Auth::login($user, true);
 
-        return redirect()->intended(route('dashboard'));
+        return redirect()->intended(RouteServiceProvider::HOME);
     }
 
     public function render()
     {
-        return view('livewire.auth.register');
+        return view('livewire.auth.register')->layout('layouts.guest');
     }
 }

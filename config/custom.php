@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'domain' => env('APP_EMAIL_DOMAIN', '@gmail.com')
+    'domain' => env('APP_EMAIL_DOMAIN', '@itam.test')
 ];

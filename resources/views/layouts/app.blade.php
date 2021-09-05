@@ -16,6 +16,7 @@
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
     <!-- <link rel="stylesheet" href="https://rsms.me/inter/inter.css"> -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css" crossorigin="anonymous" />
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -27,9 +28,21 @@
 
 <body class="font-sans antialised {{ session('theme') }}">
     <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-        <main>
-            {{ $slot }}
-        </main>
+        <div class="flex flex-col">
+            <div class="flex flex-col h-screen">
+                <div class="md:flex">
+                    @include('layouts.app.top-header')
+                </div>
+                <div class="flex flex-grow overflow-hidden">
+                    <x-main-menu class="flex-shrink-0 hidden w-56 p-12 overflow-y-auto bg-gray-800 md:block">
+                    </x-main-menu>
+                    <div class="w-full px-4 py-8 overflow-hidden overflow-y-auto md:p-12">
+                        <FlashMessages></FlashMessages>
+                        {{ $slot }}
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Scripts -->

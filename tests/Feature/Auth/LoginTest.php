@@ -1,123 +1,96 @@
 <?php
 
-namespace Tests\Feature\Auth;
-
-use App\Models\User;
+use App\Http\Livewire\Auth\Login;
+use App\Domain\Users\Models\User;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
-use Livewire\Livewire;
-use Tests\TestCase;
+use function Pest\Laravel\get;
+use function Pest\Livewire\livewire;
 
-class LoginTest extends TestCase
-{
-    use RefreshDatabase;
+uses(RefreshDatabase::class);
 
-    /** @return void */
-    public function test_can_see_login_route_as_guest()
-    {
-        $this->get(route('login'))
-            ->assertSuccessful()
-            ->assertSeeLivewire('auth.login');
-    }
+test('guests can see the login page', function () {
+    get('/login')
+        ->assertStatus(200);
+});
 
-    /** @return void */
-    public function test_is_redirected_if_logged_in()
-    {
-        $user = User::factory()->create();
+test('guest can log in', function () {
+    $email = 'test@' . config('custom.domain');
+    User::factory()->create([
+        'email' => $email,
+    ]);
 
-        $this->be($user)
-            ->get(route('login'))
-            ->assertRedirect(route('dashboard'));
-    }
+    livewire(Login::class)
+        ->set('email', $email)
+        ->set('password', 'password')
+        ->call('login');
 
-    /** @return void */
-    public function test_guest_can_login()
-    {
-        $email = 'test@' . config('custom.domain');
-        User::factory()->create([
-            'email' => $email,
-            'password' => Hash::make('password'),
-        ]);
+    expect($email)->toBe(Auth::user()->email);
+});
 
-        Livewire::test('auth.login')
-            ->set('email', $email)
-            ->set('password', 'password')
-            ->call('login')
-            ->assertRedirect(route('dashboard'));
+it('redirects when user logs in', function () {
+    $user = User::factory()->create();
 
-        $this->assertEquals($email, Auth::user()->email);
-    }
+    $this->be($user)
+        ->get(route('login'))
+        ->assertRedirect(RouteServiceProvider::HOME);
+});
 
-    /** @return void */
-    public function test_email_is_required()
-    {
-        Livewire::test('auth.login')
-            ->set('email', '')
-            ->call('login')
-            ->assertHasErrors(['email' => 'required']);
-    }
+test('email is required', function () {
+    livewire('auth.login')
+        ->set('email', '')
+        ->call('login')
+        ->assertHasErrors(['email' => 'required']);
+});
 
-    /** @return void */
-    public function test_email_is_valid()
-    {
-        Livewire::test('auth.login')
-            ->set('email', 'test')
-            ->call('login')
-            ->assertHasErrors(['email' => 'email']);
-    }
+test('email is valid', function () {
+    livewire('auth.login')
+        ->set('email', 'test')
+        ->call('login')
+        ->assertHasErrors(['email' => 'email']);
+});
 
-    /** @return void */
-    public function test_email_is_valid_ipsos_email()
-    {
-        Livewire::test('auth.login')
-            ->set('email', 'test@.com')
-            ->call('login')
-            ->assertHasErrors(['email' => 'regex']);
-    }
+test('is valid domain email', function () {
+    livewire('auth.login')
+        ->set('email', 'test@.com')
+        ->call('login')
+        ->assertHasErrors(['email' => 'regex']);
+});
 
-    /** @return void */
-    public function test_password_is_required()
-    {
-        Livewire::test('auth.login')
-            ->set('password', '')
-            ->call('login')
-            ->assertHasErrors(['password' => 'required']);
-    }
+test('password is required', function () {
+    livewire(Login::class)
+        ->set('password', '')
+        ->call('login')
+        ->assertHasErrors(['password' => 'required']);
+});
 
-    /** @return void */
-    public function test_password_is_minimum_eight_characters()
-    {
-        Livewire::test('auth.login')
-            ->set('password', '1234567')
-            ->call('login')
-            ->assertHasErrors(['password' => 'min']);
-    }
+test('password is valid', function () {
+    livewire('auth.login')
+        ->set('password', '1234567')
+        ->call('login')
+        ->assertHasErrors(['password' => 'min']);
+});
 
-    /** @return void */
-    public function test_error_on_invalid_credentials()
-    {
-        $email = 'test@' . config('custom.domain');
+test('user can\'t login with invalid credentials', function () {
+    $email = 'test@' . config('custom.domain');
 
-        User::factory()->create([
-            'email' => $email,
-            'password' => Hash::make('password')
-        ]);
+    User::factory()->create([
+        'email' => $email
+    ]);
 
-        Livewire::test('auth.login')
-            ->set('email', $email)
-            ->set('password', 'passwor')
-            ->call('login');
+    livewire(Login::class)
+        ->set('email', $email)
+        ->set('password', 'passwor')
+        ->call('login');
 
-        $this->assertNull(Auth::user());
+    expect(Auth::user())->toBeNull();
 
-        Livewire::test('auth.login')
-            ->set('email', $email)
-            ->set('password', 'password')
-            ->call('login')
-            ->assertRedirect(route('dashboard'));
+    livewire(Login::class)
+        ->set('email', $email)
+        ->set('password', 'password')
+        ->call('login')
+        ->assertRedirect(RouteServiceProvider::HOME);
 
-        $this->assertEquals($email, Auth::user()->email);
-    }
-}
+    expect(Auth::user())->toBeObject();
+});

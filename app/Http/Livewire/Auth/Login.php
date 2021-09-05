@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Auth;
 
+use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
@@ -25,11 +26,11 @@ class Login extends Component
             return;
         }
 
-        return redirect()->intended(route('dashboard'));
+        return redirect()->intended(RouteServiceProvider::HOME);
     }
 
     public function render()
     {
-        return view('livewire.auth.login');
+        return view('livewire.auth.login')->layout('layouts.guest');
     }
 }

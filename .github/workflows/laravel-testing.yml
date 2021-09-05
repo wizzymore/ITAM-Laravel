@@ -34,4 +34,4 @@ jobs:
           CACHE_DRIVER: array
           SESSION_DRIVER: array
           QUEUE_DRIVER: sync
-        run: vendor/bin/phpunit
+        run: vendor/bin/pest

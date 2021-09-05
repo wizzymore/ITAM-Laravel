@@ -16,6 +16,7 @@
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
     <!-- <link rel="stylesheet" href="https://rsms.me/inter/inter.css"> -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css" crossorigin="anonymous" />
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -27,9 +28,7 @@
 
 <body class="font-sans antialised {{ session('theme') }}">
     <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-        <main>
-            {{ $slot }}
-        </main>
+        {{ $slot }}
     </div>
 
     <!-- Scripts -->
