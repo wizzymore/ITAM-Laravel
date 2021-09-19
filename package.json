@@ -1,5 +1,6 @@
 {
     "private": true,
+    "workspaces": ["itam-client"],
     "scripts": {
         "dev": "yarn development",
         "development": "mix",

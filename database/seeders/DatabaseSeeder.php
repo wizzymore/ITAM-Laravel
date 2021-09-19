@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Domain\Assets\Models\Asset;
+use App\Domain\Assets\Models\AssetType;
 use App\Domain\Assets\Models\ProductMaker;
 use App\Domain\Assets\Models\ProductType;
 use App\Domain\Users\Models\User;
@@ -40,6 +41,17 @@ class DatabaseSeeder extends Seeder
                     'name' => 'Dell'
                 ]
             );
+        }
+
+        if (AssetType::count() === 0) {
+            AssetType::factory()->createMany([
+                [
+                    'label' => 'IIS'
+                ],
+                [
+                    'label' => 'IIR'
+                ]
+            ]);
         }
 
         Asset::factory(10)->create();

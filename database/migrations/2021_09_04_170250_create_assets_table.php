@@ -26,6 +26,13 @@ class CreateAssetsTable extends Migration
             $table->enum('status', ['active', 'in-service', 'inactive']);
             $table->timestamps();
         });
+        Schema::create('asset_types', function (Blueprint $table) {
+            $table->id();
+
+            $table->string('label')->nullable(false)->unique();
+
+            $table->timestamps();
+        });
     }
 
     /**
@@ -36,5 +43,6 @@ class CreateAssetsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('assets');
+        Schema::dropIfExists('asset_types');
     }
 }
