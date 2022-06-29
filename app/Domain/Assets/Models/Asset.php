@@ -10,7 +10,7 @@ use Laravel\Scout\Searchable;
 
 class Asset extends Model
 {
-    use HasFactory;
+    use HasFactory, Searchable;
 
     /**
      * The attributes that are mass assignable.
@@ -33,10 +33,10 @@ class Asset extends Model
     {
         $array = $this->toArray();
 
-        $array['serial_short'] = $this->serial;
-        $array['serial'] = $this->getSerial();
-        $array['serial_last_3'] = substr($this->getSerial(), -3);
-        $array['serial_with_type'] = $this->asset_type->label . $this->getSerial();
+        $array['serial_short'] = $this->attributes['serial'];
+        $array['serial'] = $this->serial;
+        $array['serial_last_3'] = substr($this->serial, -3);
+        $array['serial_with_type'] = $this->asset_type->label . $this->serial;
         $array['asset_type'] = $this->asset_type->label;
         $array['employee'] = $this->employee->getName();
         $array['product'] = $this->product->model;
@@ -54,9 +54,9 @@ class Asset extends Model
      *
      * @var string
      */
-    public function getSerial(): string
+    public function getSerialAttribute($value): string
     {
-        return sprintf('%07d', $this->serial);
+        return sprintf('%07d', $value);
     }
 
     public function employee(): BelongsTo

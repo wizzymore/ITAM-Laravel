@@ -2,7 +2,7 @@
     <div class="bg-white shadow overflow-hidden sm:rounded-lg lg:max-w-2xl mx-auto">
         <div class="px-4 py-5 sm:px-6">
             <h3 class="text-lg leading-6 font-medium text-gray-900">
-                Asset Information - {{ $asset->asset_type->label . $asset->getSerial() }}
+                Asset Information - {{ $asset->asset_type->label . $asset->serial }}
             </h3>
             <p class="mt-1 max-w-2xl text-sm text-gray-500">
                 Edit informations about the asset.
@@ -15,7 +15,7 @@
                         Serial
                     </dt>
                     <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                        <input class="px-4 py-2.5 bg-white border border-gray-900" wire:model="serial"/>
+                        <input class="px-4 py-2.5 bg-white border border-gray-900" wire:model.lazy="asset.serial"/>
                     </dd>
                 </div>
                 <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -36,7 +36,7 @@
                         Type
                     </dt>
                     <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                        <select wire:model="asset_type">
+                        <select wire:model="asset.asset_type_id">
                             <option value="-1" selected disabled hidden>Choose here</option>
                             @foreach($assetTypes as $assetType)
                                 <option value="{{ $assetType->id }}">{{ $assetType->label }}</option>
@@ -116,7 +116,7 @@
                                               clip-rule="evenodd"/>
                                     </svg>
                                     <span class="ml-2 flex-1 w-0 truncate">
-                                      {{ $asset->asset_type->label . $asset->getSerial() }} - {{ $asset->product->model }}.csv
+                                      {{ $asset->asset_type->label . $asset->serial }} - {{ $asset->product->model }}.csv
                                     </span>
                                 </div>
                                 <div class="ml-4 flex-shrink-0">
@@ -137,7 +137,7 @@
                                               clip-rule="evenodd"/>
                                     </svg>
                                     <span class="ml-2 flex-1 w-0 truncate">
-                                      {{ $asset->asset_type->label . $asset->getSerial() }} - {{ $asset->product->model }}.xlsx
+                                      {{ $asset->asset_type->label . $asset->serial }} - {{ $asset->product->model }}.xlsx
                                     </span>
                                 </div>
                                 <div class="ml-4 flex-shrink-0">

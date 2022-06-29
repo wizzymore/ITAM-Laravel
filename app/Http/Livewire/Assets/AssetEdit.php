@@ -39,7 +39,20 @@ class AssetEdit extends Component
     /** @var string */
     public $status = '';
 
+    /** @var Asset */
     public $asset = null;
+
+    protected $rules = [
+        'asset.serial' => 'string',
+        'asset.asset_type_id' => 'exists:asset_types,id',
+    ];
+
+    public function updated($field)
+    {
+        if($field === 'asset.asset_type_id') {
+            $this->asset->asset_type = AssetType::find($this->asset->asset_type_id);
+        }
+    }
 
     public function mount($assetId)
     {
@@ -49,7 +62,6 @@ class AssetEdit extends Component
 
         $this->asset = $asset;
 
-        $this->serial = $asset->getSerial();
         $this->asset_type = $asset->asset_type->id;
         $this->employee = $asset->employee->id;
         $this->product = $asset->product->id;
@@ -66,7 +78,6 @@ class AssetEdit extends Component
 
     public function save()
     {
-        $this->asset->serial = $this->serial;
         $this->asset->employee_id = $this->employee;
         $this->asset->product_id = $this->product;
         $this->asset->asset_type_id = $this->asset_type;

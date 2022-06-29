@@ -58,7 +58,7 @@ function getStatusClasses($asset): string
                                     @foreach ($data as $asset)
                                         <tr>
                                             <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
-                                                {{ $asset->asset_type->label . $asset->getSerial() }}
+                                                {{ $asset->asset_type->label . $asset->serial }}
                                             </td>
                                             <td class="px-6 py-4 whitespace-nowrap">
                                                 <div class="text-sm text-gray-900">

@@ -34,8 +34,7 @@
                     @include('layouts.app.top-header')
                 </div>
                 <div class="flex flex-grow overflow-hidden">
-                    <x-main-menu class="flex-shrink-0 hidden w-56 p-12 overflow-y-auto bg-gray-800 md:block">
-                    </x-main-menu>
+                    <x-main-menu class="flex-shrink-0 hidden w-56 p-12 overflow-y-auto bg-gray-800 md:block"/>
                     <div class="w-full px-4 py-8 overflow-hidden overflow-y-auto md:p-12">
                         <FlashMessages></FlashMessages>
                         {{ $slot }}
