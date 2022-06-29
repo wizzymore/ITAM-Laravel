@@ -34,11 +34,6 @@ class CreateProductsTable extends Migration
 
             $table->timestamps();
         });
-        if (Schema::hasTable('assets')) {
-            Schema::table('assets', function (Blueprint $table) {
-                $table->foreignId('product_id')->after('serial')->constrained();
-            });
-        }
     }
 
     /**
@@ -51,6 +46,5 @@ class CreateProductsTable extends Migration
         Schema::dropIfExists('product_types');
         Schema::dropIfExists('product_makers');
         Schema::dropIfExists('products');
-        Schema::dropColumns('assets', 'product_id');
     }
 }

@@ -17,6 +17,7 @@ class CreateAssetsTable extends Migration
             $table->id();
 
             $table->bigInteger('serial', false, true)->nullable(false)->unique();
+            $table->foreignId('product_id')->constrained();
             $table->integer('asset_type_id')->nullable(false);
             $table->string('service_tag')->nullable()->unique();
             $table->string('aviz')->nullable();

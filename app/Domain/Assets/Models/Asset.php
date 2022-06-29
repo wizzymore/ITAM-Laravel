@@ -10,7 +10,7 @@ use Laravel\Scout\Searchable;
 
 class Asset extends Model
 {
-    use HasFactory, Searchable;
+    use HasFactory;
 
     /**
      * The attributes that are mass assignable.
